@@ -1,0 +1,27 @@
+<h1>Hello {{name}}!</h1>
+<VideoPlayer url="{{url}}" />
+
+<script>
+import VideoPlayer from './VideoPlayer.html';
+export default {
+	tag: 'my-app',
+	data() {
+		return {
+			name: "",
+			url: ""
+		}
+	},
+	oncreate() {
+		console.log(this.get('url'));
+	},
+	components: {
+		VideoPlayer
+	}
+}
+</script>
+
+<style>
+	h1 {
+		color: purple;
+	}
+</style>

@@ -1,0 +1,27 @@
+<div>
+    <video ref:zdvideo_player data-dashjs-player autoplay src="" controls></video>
+</div>
+
+<style>
+video {
+    width: 500px;
+    height: 360px;
+}
+</style>
+
+<script>
+import dashjs from 'dashjs';
+
+export default {
+    tag: 'video-player',
+    data() {
+        return {
+            url: ""
+        }
+    },
+    oncreate(){
+        const player = dashjs.MediaPlayer().create();
+        player.initialize(this.refs.zdvideo_player, this.get('url'), true);
+    }
+}
+</script>
